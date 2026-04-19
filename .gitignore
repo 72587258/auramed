@@ -1,0 +1,23 @@
+# Dependencies (bahut badi hoti hain - upload nahi hogi)
+node_modules/
+*/node_modules/
+
+# Environment Variables (secrets - kabhi upload mat karo)
+backend/.env
+frontend/.env.local
+frontend/.env.production
+
+# Build output (Vercel khud banayega)
+frontend/build/
+
+# User uploaded images
+backend/uploads/*
+!backend/uploads/.gitkeep
+
+# OS Files
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+*.log

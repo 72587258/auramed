@@ -1,0 +1,107 @@
+.diagnosis-container {
+    min-height: 100vh;
+    background: #040f1a;
+    background-image: radial-gradient(circle at center, rgba(58, 123, 213, 0.1), transparent 70%);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem 1rem;
+    position: relative;
+}
+
+.result-box {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(0, 210, 255, 0.2);
+    border-radius: 20px;
+    padding: 3rem;
+    width: 100%;
+    max-width: 750px;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+}
+
+.pulse {
+    animation: heartbeat 1.5s infinite;
+}
+
+@keyframes heartbeat {
+    0% { transform: scale(1); }
+    15% { transform: scale(1.1); }
+    30% { transform: scale(1); }
+    45% { transform: scale(1.1); }
+    60% { transform: scale(1); }
+}
+
+.section-title {
+    font-size: 1.3rem;
+    color: #00d2ff;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(0, 210, 255, 0.2);
+    padding-bottom: 0.5rem;
+}
+
+.diseases-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.disease-card {
+    background: rgba(0,0,0,0.4);
+    border: 1px solid rgba(255,255,255,0.05);
+    padding: 1.5rem;
+    border-radius: 12px;
+}
+
+.disease-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+.disease-info h4 { font-size: 1.2rem; font-weight: 700; margin: 0; }
+.severity-badge {
+    background: rgba(255,255,255,0.1);
+    padding: 0.3rem 0.8rem;
+    border-radius: 5px;
+    font-size: 0.85rem;
+    font-weight: 800;
+}
+
+.prob-wrapper { margin-top: 1rem; }
+.prob-bar-container {
+    width: 100%;
+    height: 8px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 50px;
+    overflow: hidden;
+    margin-bottom: 0.5rem;
+}
+.prob-bar-fill {
+    height: 100%;
+    border-radius: 50px;
+}
+.prob-text {
+    font-size: 0.85rem;
+    color: #94a3b8;
+    text-align: right;
+    display: block;
+}
+
+.advice-section {
+    margin-top: 2.5rem;
+    background: linear-gradient(135deg, rgba(0,210,255,0.05), rgba(58,123,213,0.1));
+    border-left: 4px solid #00d2ff;
+    padding: 1.5rem;
+    border-radius: 0 10px 10px 0;
+}
+.advice-section h3 { color: #00d2ff; margin-bottom: 0.5rem; }
+.advice-section p { font-size: 1.1rem; line-height: 1.6; color: #e2e8f0; }
+
+.disclaimer {
+    background: rgba(234, 179, 8, 0.05);
+    border: 1px dashed rgba(234, 179, 8, 0.3);
+    padding: 1rem;
+    border-radius: 8px;
+}

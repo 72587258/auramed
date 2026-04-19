@@ -1,0 +1,160 @@
+.symptom-checker-container {
+    min-height: 100vh;
+    background: #040f1a;
+    background-image: radial-gradient(circle at top, rgba(0,210,255,0.1), transparent 50%);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    position: relative;
+}
+
+.back-btn {
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+    background: transparent;
+    border: none;
+    color: #00d2ff;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.checker-box {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 3rem;
+    width: 100%;
+    max-width: 600px;
+    backdrop-filter: blur(15px);
+    box-shadow: 0 0 50px rgba(0,0,0,0.5);
+    text-align: center;
+}
+
+.checker-header { margin-bottom: 2rem; }
+.header-icon { font-size: 4rem; color: #00d2ff; margin: 0 auto 1rem; }
+.checker-header h2 { font-size: 2rem; font-weight: 800; margin-bottom: 0.5rem; color: #fff; }
+.checker-header p { color: #a0aec0; }
+
+.symptom-input-group {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.symptom-input {
+    flex: 1;
+    background: rgba(0,0,0,0.3);
+    border: 1px solid rgba(0, 210, 255, 0.4);
+    padding: 1rem;
+    border-radius: 10px;
+    color: #fff;
+    outline: none;
+    font-size: 1rem;
+}
+.symptom-input:focus { border-color: #00d2ff; box-shadow: 0 0 15px rgba(0,210,255,0.2); }
+
+.add-symptom-btn {
+    background: rgba(0, 210, 255, 0.2);
+    border: 1px solid #00d2ff;
+    color: #00d2ff;
+    padding: 0 1.5rem;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.add-symptom-btn:hover { background: #00d2ff; color: #fff; }
+
+.mic-btn {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #a0aec0;
+    padding: 0 1.2rem;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: 0.3s;
+}
+.mic-btn:hover { background: rgba(0, 210, 255, 0.1); color: #00d2ff; }
+.mic-btn.listening {
+    color: #ff4757;
+    border-color: #ff4757;
+    animation: pulseMic 1.5s infinite;
+}
+
+@keyframes pulseMic {
+    0% { box-shadow: 0 0 0 0 rgba(255, 71, 87, 0.4); }
+    70% { box-shadow: 0 0 0 10px rgba(255, 71, 87, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(255, 71, 87, 0); }
+}
+
+.suggestions-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 4.5rem; /* align with input */
+    right: 4.5rem;
+    background: rgba(10, 20, 35, 0.95);
+    border: 1px solid rgba(0, 210, 255, 0.3);
+    border-radius: 10px;
+    margin-top: 0.5rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+    backdrop-filter: blur(10px);
+    list-style: none;
+    padding: 0.5rem 0;
+    max-height: 200px;
+    overflow-y: auto;
+    z-index: 50;
+    text-align: left;
+}
+
+.suggestions-dropdown li {
+    padding: 0.8rem 1.5rem;
+    cursor: pointer;
+    color: #cbd5e1;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    transition: 0.2s;
+}
+.suggestions-dropdown li:last-child { border-bottom: none; }
+.suggestions-dropdown li:hover {
+    background: rgba(0, 210, 255, 0.15);
+    color: #fff;
+    padding-left: 2rem;
+}
+
+.symptoms-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    margin-bottom: 2rem;
+    min-height: 50px;
+}
+
+.symptom-tag {
+    background: linear-gradient(90deg, rgba(0,210,255,0.1), rgba(58,123,213,0.1));
+    border: 1px solid rgba(0, 210, 255, 0.3);
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.95rem;
+}
+.symptom-tag button { background: transparent; border: none; color: #f87171; cursor: pointer; }
+
+.analyze-btn {
+    background: linear-gradient(135deg, #00d2ff, #3a7bd5);
+    width: 100%;
+    padding: 1.2rem;
+    border-radius: 10px;
+    border: none;
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 800;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.analyze-btn:hover:not(.disabled) { transform: translateY(-3px); box-shadow: 0 10px 25px rgba(0,210,255,0.4); }
+.analyze-btn.disabled { opacity: 0.5; cursor: not-allowed; }
